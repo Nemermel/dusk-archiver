@@ -1,0 +1,40 @@
+# Example authoring metadata for dusk-archiver.
+# Copy to ../dusk/assets/atlas.toml and edit. Every table is optional.
+
+[atlas]
+size = 512
+compression = "lz4"
+
+[sprite.demon_intruder]
+ascii = "d"
+pivot = [16, 32]
+frame_rate_fps = 8
+render_mode = "rgba"
+
+[sprite.wall_chitin]
+ascii = "#"
+pivot = [0, 0]
+render_mode = "mask"
+
+[socket.demon_intruder.hand_r]
+offset = [12, -16]
+z = 1
+mirror = true
+
+[socket.demon_intruder.hand_l]
+offset = [-12, -16]
+z = 1
+mirror = true
+
+[composite.breach_portal_colossus]
+grid_size = [3, 3]
+interaction_tile = [1, 2]
+footprint = [
+  [0, 1, 0],
+  [1, 1, 1],
+  [0, 1, 0],
+]
+parts = [
+  { sprite = "void_portal", grid_pos = [0, 0], pixel_offset = [0, 0], z = 31 },
+  { sprite = "wall_chitin", grid_pos = [1, 1], pixel_offset = [0, -4], z = 35 },
+]
